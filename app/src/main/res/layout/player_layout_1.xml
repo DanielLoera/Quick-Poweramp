@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/albumArt"
+        android:src="@mipmap/ic_launcher"
+        app:layout_heightPercent="100%"
+        android:scaleType="fitXY"
+        android:layout_alignParentTop="true"
+        />
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nonArt"
+        android:background="@color/colorPrimary"
+        app:layout_heightPercent="35%"
+        android:paddingTop="5dp"
+        android:minWidth="30dp"
+        >
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="45%"
+        android:textColor="#FFFFFF"
+        android:id="@+id/songText"
+        android:text="No Song Info"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:requiresFadingEdge="horizontal"
+
+        />
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/albumArtistText"
+        android:textColor="#FFFFFF"
+        android:text="hold on..."
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_below="@id/songText"
+        app:layout_widthPercent="45%"
+        android:requiresFadingEdge="horizontal"
+        />
+
+        <ImageButton
+            android:layout_below="@id/albumArtistText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pausePlay"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_pause_white_36dp"
+            android:background="@android:color/transparent"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:onClick="playPausePressed"
+            />
+        <ImageButton
+            android:layout_below="@id/albumArtistText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rw"
+            android:src="@drawable/ic_rewind_white_36dp"
+            android:layout_toStartOf="@+id/pausePlay"
+            android:background="@android:color/transparent"
+            android:onClick="previousPressed"
+            />
+        <ImageButton
+            android:layout_below="@id/albumArtistText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ff"
+            android:src="@drawable/ic_fast_forward_white_36dp"
+            android:layout_toEndOf="@+id/pausePlay"
+            android:background="@android:color/transparent"
+            android:onClick="nextPressed"
+            />
+
+        <ImageButton
+            android:id="@+id/exit"
+            android:paddingStart="7dp"
+            android:paddingTop="5dp"
+            android:scaleType="fitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/albumArtistText"
+            android:src="@drawable/ic_close_white_24dp"
+            android:background="@android:color/transparent"
+            android:onClick="cancelPressed"
+            />
+
+        <ImageButton
+            android:id="@+id/volume"
+            android:paddingEnd="7dp"
+            android:paddingTop="5dp"
+            android:scaleType="fitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/albumArtistText"
+            android:src="@drawable/ic_volume_high_white_24dp"
+            android:background="@android:color/transparent"
+            android:onClick="volumePressed"
+            />
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/adminDialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"
+        android:visibility="invisible"
+        >
+        <TextView
+            android:id="@+id/adminText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open Case To Grant Administrative Access"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:gravity="center"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_dialog_alert"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/adminText"
+            android:padding="10dp"
+            />
+
+    </RelativeLayout>
+
+</android.support.percent.PercentRelativeLayout>

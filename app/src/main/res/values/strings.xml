@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Quick Poweramp</string>
+    <string name="desc">Double Tap Screen Lock</string>
+    <string name="service_name">Notification Listener</string>
+</resources>
